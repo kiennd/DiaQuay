@@ -25,4 +25,5 @@
 @property (assign) long money,bet;
 @property (assign) BOOL running;
 - (void) startGame;
+- (void) randomVelocity;
 @end

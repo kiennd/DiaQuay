@@ -18,6 +18,7 @@ int _last;
     self = [super initWithFrame:frame];
     if (self) {
         _last = 0;
+        _res = 1000;
         // Initialization code
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"button1" ofType:@"wav"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -48,7 +49,7 @@ int _last;
 
     if (_last >= 45) {
 
-        _last = 0;
+        _last -= 45;
         if ([_player isPlaying] == false) {
             [_player play];
         }
@@ -90,7 +91,6 @@ int _last;
     }else{
         _dimensional = 1;
     }
-    [_tm invalidate];
     _tm = [NSTimer scheduledTimerWithTimeInterval:0.2
                                                    target:self
                                                  selector:@selector(changeVelocity)

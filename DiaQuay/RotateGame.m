@@ -46,33 +46,33 @@
         [self addSubview:_c1];
         [self addSubview:_c3];
         [self addSubview:_c2];
+        
+        tm = [NSTimer scheduledTimerWithTimeInterval:1
+                                              target:self
+                                            selector:@selector(changeTd)
+                                            userInfo:nil
+                                             repeats:YES
+              ];
+        
         // Initialization code
     }
     return self;
 }
 
-- (void) startGame
+- (void) randomVelocity
 {
-    _running =true;
     _c1.res = 1000;
     _c2.res = 1000;
     _c3.res = 1000;
-    _v1= (arc4random()%50+50.0)/100.0*36.0;
-    _v2= (arc4random()%50+50.0)/100.0*36.0*-1;
-    _v3= (arc4random()%50+50.0)/100.0*36.0;
-
+    _v1= (arc4random()%50+80.0)/100.0*36.0;
+    _v2= (arc4random()%50+80.0)/100.0*36.0*-1;
+    _v3= (arc4random()%50+80.0)/100.0*36.0;
+    
     _a1= (arc4random()%50+50.0)/100.0;
     _a2= (arc4random()%50+50.0)/100.0;
     _a3= (arc4random()%50+50.0)/100.0;
     
     
-    [tm invalidate];
-    tm = [NSTimer scheduledTimerWithTimeInterval:1
-                                                   target:self
-                                                 selector:@selector(changeTd)
-                                                 userInfo:nil
-                                                  repeats:YES
-                   ];
     _c1.velocity1 = _v1;
     _c1.acceleration1 = _a1;
     _c2.velocity1 = _v2;
@@ -80,6 +80,12 @@
     _c3.velocity1 = _v3;
     _c3.acceleration1 = _a3;
     
+}
+
+- (void) startGame
+{
+    _running =true;
+    [self randomVelocity];
     [_c1 start];
     [_c2 start];
     [_c3 start];
@@ -92,10 +98,16 @@
         _dt.image = _picTd[arc4random()%5];
         
     }completion:^(BOOL finished) {
- 
     }];
 
-            NSLog(@"%d, %d, %d",_c3.res,_c2.res,_c1.res);
+    /*
+    [UIView animateWithDuration:2 delay:2 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        _dt.image = _picTd[arc4random()%5];
+        
+    }completion:^(BOOL finished){
+        [self changeTd];
+    }];*/
+        //    NSLog(@"%d, %d, %d",_c3.res,_c2.res,_c1.res);
     if (_c3.res !=1000 && _c1.res!=1000 && _c2.res!=1000) {
         NSLog(@"res  %d, %d, %d",_c3.res,_c2.res,_c1.res);
         if (_c3.res!=_c2.res && _c2.res!= _c1.res && _c3.res!=_c1.res) {
@@ -103,11 +115,11 @@
             [_playerLose play];
             
         }else{
-            if (_c3.res == _c2.res ==_c1.res) {
+            if (_c3.res == _c2.res && _c2.res ==_c1.res) {
                 _money+= (3*_bet);
                 [_player play];
             }else{
-                _money+=(2*_bet);
+                _money+=_bet;
                 [_player play];
             }
             
