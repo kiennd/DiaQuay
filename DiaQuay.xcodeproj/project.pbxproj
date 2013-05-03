@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2A3F8C1733683700AAFABA /* lv3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2A3F8B1733683700AAFABA /* lv3.png */; };
 		4BE6C2E417333CE700241FC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE6C2E317333CE700241FC6 /* UIKit.framework */; };
 		4BE6C2E617333CE700241FC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE6C2E517333CE700241FC6 /* Foundation.framework */; };
 		4BE6C2E817333CE700241FC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE6C2E717333CE700241FC6 /* CoreGraphics.framework */; };
@@ -23,7 +24,6 @@
 		4BE6C30D17333CFD00241FC6 /* td3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30817333CFD00241FC6 /* td3.png */; };
 		4BE6C30E17333CFD00241FC6 /* td2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30917333CFD00241FC6 /* td2.png */; };
 		4BE6C30F17333CFD00241FC6 /* td1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30A17333CFD00241FC6 /* td1.png */; };
-		4BE6C31417333D1C00241FC6 /* lv3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31017333D1C00241FC6 /* lv3.png */; };
 		4BE6C31517333D1C00241FC6 /* lv2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31117333D1C00241FC6 /* lv2.png */; };
 		4BE6C31617333D1C00241FC6 /* lv1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31217333D1C00241FC6 /* lv1.png */; };
 		4BE6C31717333D1C00241FC6 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31317333D1C00241FC6 /* background.png */; };
@@ -37,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B2A3F8B1733683700AAFABA /* lv3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lv3.png; sourceTree = "<group>"; };
 		4BE6C2E017333CE700241FC6 /* DiaQuay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaQuay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE6C2E317333CE700241FC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BE6C2E517333CE700241FC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,7 +59,6 @@
 		4BE6C30817333CFD00241FC6 /* td3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td3.png; sourceTree = "<group>"; };
 		4BE6C30917333CFD00241FC6 /* td2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td2.png; sourceTree = "<group>"; };
 		4BE6C30A17333CFD00241FC6 /* td1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td1.png; sourceTree = "<group>"; };
-		4BE6C31017333D1C00241FC6 /* lv3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lv3.png; sourceTree = "<group>"; };
 		4BE6C31117333D1C00241FC6 /* lv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lv2.png; sourceTree = "<group>"; };
 		4BE6C31217333D1C00241FC6 /* lv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lv1.png; sourceTree = "<group>"; };
 		4BE6C31317333D1C00241FC6 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		4BE6C2E917333CE700241FC6 /* DiaQuay */ = {
 			isa = PBXGroup;
 			children = (
+				4B2A3F8B1733683700AAFABA /* lv3.png */,
 				4BE6C3261733604900241FC6 /* backgroundMusic.mp3 */,
 				4BE6C32417335EBC00241FC6 /* lose.mp3 */,
 				4BE6C32217335C4300241FC6 /* tada.mp3 */,
@@ -127,7 +128,6 @@
 				4BE6C31917333D3400241FC6 /* RotateGame.h */,
 				4BE6C31A17333D3400241FC6 /* CircleRotate.m */,
 				4BE6C31B17333D3400241FC6 /* CircleRotate.h */,
-				4BE6C31017333D1C00241FC6 /* lv3.png */,
 				4BE6C31117333D1C00241FC6 /* lv2.png */,
 				4BE6C31217333D1C00241FC6 /* lv1.png */,
 				4BE6C31317333D1C00241FC6 /* background.png */,
@@ -221,7 +221,6 @@
 				4BE6C30D17333CFD00241FC6 /* td3.png in Resources */,
 				4BE6C30E17333CFD00241FC6 /* td2.png in Resources */,
 				4BE6C30F17333CFD00241FC6 /* td1.png in Resources */,
-				4BE6C31417333D1C00241FC6 /* lv3.png in Resources */,
 				4BE6C31517333D1C00241FC6 /* lv2.png in Resources */,
 				4BE6C31617333D1C00241FC6 /* lv1.png in Resources */,
 				4BE6C31717333D1C00241FC6 /* background.png in Resources */,
@@ -229,6 +228,7 @@
 				4BE6C32317335C4300241FC6 /* tada.mp3 in Resources */,
 				4BE6C32517335EBC00241FC6 /* lose.mp3 in Resources */,
 				4BE6C3271733604900241FC6 /* backgroundMusic.mp3 in Resources */,
+				4B2A3F8C1733683700AAFABA /* lv3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +366,7 @@
 				4BE6C30517333CE700241FC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
