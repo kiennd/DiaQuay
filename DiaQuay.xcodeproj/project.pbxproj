@@ -18,6 +18,22 @@
 		4BE6C2FA17333CE700241FC6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C2F917333CE700241FC6 /* Default-568h@2x.png */; };
 		4BE6C2FD17333CE700241FC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C2FC17333CE700241FC6 /* ViewController.m */; };
 		4BE6C30017333CE700241FC6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C2FE17333CE700241FC6 /* ViewController.xib */; };
+		4BE6C30B17333CFD00241FC6 /* td5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30617333CFD00241FC6 /* td5.png */; };
+		4BE6C30C17333CFD00241FC6 /* td4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30717333CFD00241FC6 /* td4.png */; };
+		4BE6C30D17333CFD00241FC6 /* td3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30817333CFD00241FC6 /* td3.png */; };
+		4BE6C30E17333CFD00241FC6 /* td2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30917333CFD00241FC6 /* td2.png */; };
+		4BE6C30F17333CFD00241FC6 /* td1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C30A17333CFD00241FC6 /* td1.png */; };
+		4BE6C31417333D1C00241FC6 /* lv3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31017333D1C00241FC6 /* lv3.png */; };
+		4BE6C31517333D1C00241FC6 /* lv2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31117333D1C00241FC6 /* lv2.png */; };
+		4BE6C31617333D1C00241FC6 /* lv1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31217333D1C00241FC6 /* lv1.png */; };
+		4BE6C31717333D1C00241FC6 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31317333D1C00241FC6 /* background.png */; };
+		4BE6C31C17333D3400241FC6 /* RotateGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C31817333D3400241FC6 /* RotateGame.m */; };
+		4BE6C31D17333D3400241FC6 /* CircleRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C31A17333D3400241FC6 /* CircleRotate.m */; };
+		4BE6C31F1733504C00241FC6 /* button1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C31E1733504C00241FC6 /* button1.wav */; };
+		4BE6C3211733506200241FC6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE6C3201733506200241FC6 /* AVFoundation.framework */; };
+		4BE6C32317335C4300241FC6 /* tada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C32217335C4300241FC6 /* tada.mp3 */; };
+		4BE6C32517335EBC00241FC6 /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C32417335EBC00241FC6 /* lose.mp3 */; };
+		4BE6C3271733604900241FC6 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BE6C3261733604900241FC6 /* backgroundMusic.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +53,24 @@
 		4BE6C2FB17333CE700241FC6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4BE6C2FC17333CE700241FC6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4BE6C2FF17333CE700241FC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		4BE6C30617333CFD00241FC6 /* td5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td5.png; sourceTree = "<group>"; };
+		4BE6C30717333CFD00241FC6 /* td4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td4.png; sourceTree = "<group>"; };
+		4BE6C30817333CFD00241FC6 /* td3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td3.png; sourceTree = "<group>"; };
+		4BE6C30917333CFD00241FC6 /* td2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td2.png; sourceTree = "<group>"; };
+		4BE6C30A17333CFD00241FC6 /* td1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td1.png; sourceTree = "<group>"; };
+		4BE6C31017333D1C00241FC6 /* lv3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lv3.png; sourceTree = "<group>"; };
+		4BE6C31117333D1C00241FC6 /* lv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lv2.png; sourceTree = "<group>"; };
+		4BE6C31217333D1C00241FC6 /* lv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lv1.png; sourceTree = "<group>"; };
+		4BE6C31317333D1C00241FC6 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		4BE6C31817333D3400241FC6 /* RotateGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotateGame.m; sourceTree = "<group>"; };
+		4BE6C31917333D3400241FC6 /* RotateGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateGame.h; sourceTree = "<group>"; };
+		4BE6C31A17333D3400241FC6 /* CircleRotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleRotate.m; sourceTree = "<group>"; };
+		4BE6C31B17333D3400241FC6 /* CircleRotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleRotate.h; sourceTree = "<group>"; };
+		4BE6C31E1733504C00241FC6 /* button1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button1.wav; sourceTree = "<group>"; };
+		4BE6C3201733506200241FC6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4BE6C32217335C4300241FC6 /* tada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tada.mp3; sourceTree = "<group>"; };
+		4BE6C32417335EBC00241FC6 /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		4BE6C3261733604900241FC6 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE6C3211733506200241FC6 /* AVFoundation.framework in Frameworks */,
 				4BE6C2E417333CE700241FC6 /* UIKit.framework in Frameworks */,
 				4BE6C2E617333CE700241FC6 /* Foundation.framework in Frameworks */,
 				4BE6C2E817333CE700241FC6 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +108,7 @@
 		4BE6C2E217333CE700241FC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BE6C3201733506200241FC6 /* AVFoundation.framework */,
 				4BE6C2E317333CE700241FC6 /* UIKit.framework */,
 				4BE6C2E517333CE700241FC6 /* Foundation.framework */,
 				4BE6C2E717333CE700241FC6 /* CoreGraphics.framework */,
@@ -83,6 +119,23 @@
 		4BE6C2E917333CE700241FC6 /* DiaQuay */ = {
 			isa = PBXGroup;
 			children = (
+				4BE6C3261733604900241FC6 /* backgroundMusic.mp3 */,
+				4BE6C32417335EBC00241FC6 /* lose.mp3 */,
+				4BE6C32217335C4300241FC6 /* tada.mp3 */,
+				4BE6C31E1733504C00241FC6 /* button1.wav */,
+				4BE6C31817333D3400241FC6 /* RotateGame.m */,
+				4BE6C31917333D3400241FC6 /* RotateGame.h */,
+				4BE6C31A17333D3400241FC6 /* CircleRotate.m */,
+				4BE6C31B17333D3400241FC6 /* CircleRotate.h */,
+				4BE6C31017333D1C00241FC6 /* lv3.png */,
+				4BE6C31117333D1C00241FC6 /* lv2.png */,
+				4BE6C31217333D1C00241FC6 /* lv1.png */,
+				4BE6C31317333D1C00241FC6 /* background.png */,
+				4BE6C30617333CFD00241FC6 /* td5.png */,
+				4BE6C30717333CFD00241FC6 /* td4.png */,
+				4BE6C30817333CFD00241FC6 /* td3.png */,
+				4BE6C30917333CFD00241FC6 /* td2.png */,
+				4BE6C30A17333CFD00241FC6 /* td1.png */,
 				4BE6C2F217333CE700241FC6 /* AppDelegate.h */,
 				4BE6C2F317333CE700241FC6 /* AppDelegate.m */,
 				4BE6C2FB17333CE700241FC6 /* ViewController.h */,
@@ -163,6 +216,19 @@
 				4BE6C2F817333CE700241FC6 /* Default@2x.png in Resources */,
 				4BE6C2FA17333CE700241FC6 /* Default-568h@2x.png in Resources */,
 				4BE6C30017333CE700241FC6 /* ViewController.xib in Resources */,
+				4BE6C30B17333CFD00241FC6 /* td5.png in Resources */,
+				4BE6C30C17333CFD00241FC6 /* td4.png in Resources */,
+				4BE6C30D17333CFD00241FC6 /* td3.png in Resources */,
+				4BE6C30E17333CFD00241FC6 /* td2.png in Resources */,
+				4BE6C30F17333CFD00241FC6 /* td1.png in Resources */,
+				4BE6C31417333D1C00241FC6 /* lv3.png in Resources */,
+				4BE6C31517333D1C00241FC6 /* lv2.png in Resources */,
+				4BE6C31617333D1C00241FC6 /* lv1.png in Resources */,
+				4BE6C31717333D1C00241FC6 /* background.png in Resources */,
+				4BE6C31F1733504C00241FC6 /* button1.wav in Resources */,
+				4BE6C32317335C4300241FC6 /* tada.mp3 in Resources */,
+				4BE6C32517335EBC00241FC6 /* lose.mp3 in Resources */,
+				4BE6C3271733604900241FC6 /* backgroundMusic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +242,8 @@
 				4BE6C2F017333CE700241FC6 /* main.m in Sources */,
 				4BE6C2F417333CE700241FC6 /* AppDelegate.m in Sources */,
 				4BE6C2FD17333CE700241FC6 /* ViewController.m in Sources */,
+				4BE6C31C17333D3400241FC6 /* RotateGame.m in Sources */,
+				4BE6C31D17333D3400241FC6 /* CircleRotate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import "RotateGame.h"
+@interface ViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *moneyStatus;
+@property (weak, nonatomic) IBOutlet UITextField *betMoney;
+@property (weak, nonatomic) IBOutlet UIButton *startBtn;
+@property (strong) NSTimer* timer;
 @end
