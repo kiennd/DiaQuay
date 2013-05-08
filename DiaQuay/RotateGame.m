@@ -29,9 +29,19 @@
         
         
         
+        soundFilePath = [[NSBundle mainBundle] pathForResource:@"coins-charg" ofType:@"mp3"];
+        soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+        _playerCoinCharg =[[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+        
         _running =false;
-        _money =1000000;
-        _bet = 0;
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"money"
+                                                         ofType:@"txt"];
+        NSString* money =  [NSString stringWithContentsOfFile:path
+                                                     encoding:NSUTF8StringEncoding
+                                                        error:nil];
+        
+        _money =[money longLongValue];
+        _bet = malloc(sizeof(int)*9);
         _picTd = [[NSMutableArray alloc] initWithObjects: nil];
         for (int i=1; i<=5; i++) {
             [_picTd addObject:[UIImage imageNamed:[NSString stringWithFormat:@"td%d.png",i]]];
@@ -42,11 +52,12 @@
         _dt =  [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.origin.x, self.bounds.origin.y-30, self.bounds.size.width, self.bounds.size.height+30)];
         
         _dt.image = _picTd[0];
-        [self addSubview:_dt];
+
         [self addSubview:_c1];
-        [self addSubview:_c3];
-        [self addSubview:_c2];
         
+        [self addSubview:_c2];
+        [self addSubview:_c3];
+        [self addSubview:_dt];        
         tm = [NSTimer scheduledTimerWithTimeInterval:1
                                               target:self
                                             selector:@selector(changeTd)
@@ -91,6 +102,11 @@
     [_c3 start];
 }
 
+- (void) setBet:(int *)bet loc:(int) vt{
+    _bet[vt] = bet;
+    NSLog(@"%d  %d",vt,bet);
+}
+
 - (void) changeTd
 {
 
@@ -109,21 +125,59 @@
     }];*/
         //    NSLog(@"%d, %d, %d",_c3.res,_c2.res,_c1.res);
     if (_c3.res !=1000 && _c1.res!=1000 && _c2.res!=1000) {
+        _c1.res=-1*_c1.res/45;
+        _c2.res=-1*_c2.res/45;
+        _c3.res=-1*_c3.res/45;
+        if (_c1.res <0 ) {
+            _c1.res +=8;
+        }
+        if (_c2.res <0 ) {
+            _c2.res +=8;
+        }
+        if (_c3.res <0 ) {
+            _c3.res +=8;
+        }
         NSLog(@"res  %d, %d, %d",_c3.res,_c2.res,_c1.res);
-        if (_c3.res!=_c2.res && _c2.res!= _c1.res && _c3.res!=_c1.res) {
-            _money -= _bet;
+        
+        long res=0;
+        for (int i=0; i<8; i++) {
+            if (i==_c1.res) {
+                res+=_bet[i];
+                NSLog(@"add %d",_bet[i]);
+            }else{
+                res-=_bet[i];
+            }
+            if (i==_c2.res) {
+                res+=_bet[i];
+                NSLog(@"add %d",_bet[i]);
+            }else{
+                res-=_bet[i];
+            }
+            if (i==_c3.res) {
+                res+=_bet[i];
+                NSLog(@"add %d",_bet[i]);
+            }else{
+                res-=_bet[i];
+            }
+        
+        }
+        
+        if (res<0) {
+            _money += res;
             [_playerLose play];
             
         }else{
-            if (_c3.res == _c2.res && _c2.res ==_c1.res) {
-                _money+= (3*_bet);
-                [_player play];
-            }else{
-                _money+=_bet;
-                [_player play];
-            }
+            _money+=res;
+            [_player play];
             
         }
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"money"
+                                                         ofType:@"txt"];
+        NSLog(@"path = %@",path);
+        NSString* tofile = [NSString stringWithFormat:@"%ld",_money];
+        NSLog(@"%ld %@",_money,tofile);
+        [tofile writeToFile:path atomically:NO encoding:NSUTF8StringEncoding error:nil];
+        
         _c3.res = 1000;
         _c2.res = 1000;
         _c1.res = 1000;
@@ -131,6 +185,18 @@
     }
 
     
+}
+- (void) napTien{
+    _money +=100000;
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"money"
+                                                     ofType:@"txt"];
+    NSLog(@"path = %@",path);
+    NSString* tofile = [NSString stringWithFormat:@"%ld",_money];
+    NSLog(@"%ld %@",_money,tofile);
+    [tofile writeToFile:path atomically:NO encoding:NSUTF8StringEncoding error:nil];
+    UIAlertView * al =  [[UIAlertView alloc] initWithTitle:@"Nap tien" message:@"Nap tien thanh cong" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [al show];
+    [_playerCoinCharg play];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

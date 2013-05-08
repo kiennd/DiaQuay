@@ -19,11 +19,14 @@ int _last;
     if (self) {
         _last = 0;
         _res = 1000;
+        
         // Initialization code
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"button1" ofType:@"wav"];
+
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+        
         _player.numberOfLoops = 0;
 
         _acceleration1 = acceleration;
@@ -32,6 +35,7 @@ int _last;
         
         _circle1 =  [[UIImageView alloc] initWithFrame:self.bounds];
         _circle1.image = [UIImage imageNamed:imgName];
+        NSLog(@"imgname :%@",imgName);
         _circle1.backgroundColor =  [UIColor clearColor];
         [self addSubview:_circle1];
         
@@ -60,7 +64,6 @@ int _last;
     CGFloat radians = atan2f(uim.transform.b, uim.transform.a);
     [UIView animateWithDuration:0.01 animations:^{
         uim.transform = CGAffineTransformMakeRotation(radians+_dimensional* degree*M_PI/180.0);
-        
         
     }completion:^(BOOL finished) {
         if (_velocity1>0) {

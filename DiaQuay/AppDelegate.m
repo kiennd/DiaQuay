@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MenuViewController.h"
 
 @implementation AppDelegate
 
@@ -16,8 +16,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    
+    
+    UINavigationController* nv = [[UINavigationController alloc] initWithRootViewController:self.menuViewController];
+    nv.navigationBarHidden = YES;
+    self.window.rootViewController = nv;
     [self.window makeKeyAndVisible];
     return YES;
 }
