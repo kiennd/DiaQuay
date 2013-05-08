@@ -86,9 +86,11 @@
     
     _c1.velocity1 = _v1;
     _c1.acceleration1 = _a1;
-    _c2.velocity1 = _v2;
+    //_c2.velocity1 = _v2;
+    _c2.velocity1 = -((float)_v1/_a1)*_a2;
     _c2.acceleration1 = _a2;
-    _c3.velocity1 = _v3;
+    //_c3.velocity1 = _v3;
+    _c3.velocity1 = ((float)_v1/_a1)*_a3;
     _c3.acceleration1 = _a3;
     
 }
@@ -104,7 +106,6 @@
 
 - (void) setBet:(int *)bet loc:(int) vt{
     _bet[vt] = bet;
-    NSLog(@"%d  %d",vt,bet);
 }
 
 - (void) changeTd
@@ -140,21 +141,25 @@
         NSLog(@"res  %d, %d, %d",_c3.res,_c2.res,_c1.res);
         
         long res=0;
+        int dem = 0;
         for (int i=0; i<8; i++) {
             if (i==_c1.res) {
-                res+=_bet[i];
+                res+=2*_bet[i];
+                dem++;
                 NSLog(@"add %d",_bet[i]);
             }else{
                 res-=_bet[i];
             }
             if (i==_c2.res) {
-                res+=_bet[i];
+                dem++;
+                res+=(dem+2)*_bet[i];
                 NSLog(@"add %d",_bet[i]);
             }else{
                 res-=_bet[i];
             }
             if (i==_c3.res) {
-                res+=_bet[i];
+                dem++;
+                res+=(dem+2)*_bet[i];
                 NSLog(@"add %d",_bet[i]);
             }else{
                 res-=_bet[i];
@@ -169,7 +174,6 @@
         }else{
             _money+=res;
             [_player play];
-            
         }
         NSString* path = [[NSBundle mainBundle] pathForResource:@"money"
                                                          ofType:@"txt"];

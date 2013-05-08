@@ -66,14 +66,14 @@ int _last;
         uim.transform = CGAffineTransformMakeRotation(radians+_dimensional* degree*M_PI/180.0);
         
     }completion:^(BOOL finished) {
-        if (_velocity1>0) {
+        if (_velocity1>=0.7) {
             [self rotate:_velocity1 image:uim];
         }else{
                 CGFloat radians = atan2f(uim.transform.b, uim.transform.a);
             int degree = radians*180.0/M_PI;
             
             if (degree%45!=0) {
-                [self rotate:1 image:uim];
+                [self rotate:0.5 image:uim];
                 
             }else{
                 NSLog(@"done %d",degree);
@@ -95,11 +95,11 @@ int _last;
         _dimensional = 1;
     }
     _tm = [NSTimer scheduledTimerWithTimeInterval:0.2
-                                                   target:self
-                                                 selector:@selector(changeVelocity)
-                                                 userInfo:nil
-                                                  repeats:YES
-                   ];
+                                           target:self
+                                         selector:@selector(changeVelocity)
+                                         userInfo:nil
+                                          repeats:YES
+           ];
     [self rotate:_velocity1 image:_circle1];
     
 }
