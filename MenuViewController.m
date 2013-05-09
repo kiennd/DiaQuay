@@ -43,7 +43,7 @@
 
     [UIView  beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.75];
+    [UIView setAnimationDuration:1];
         [self.navigationController pushViewController:gameVC animated:NO];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];        
         [UIView commitAnimations];
