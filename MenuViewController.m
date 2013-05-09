@@ -40,15 +40,13 @@
     NSLog(@"abc");
     
     ViewController* gameVC =  [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    
-    [UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        [self.navigationController pushViewController:gameVC animated:YES];
-        
-    } completion:^(BOOL finished){
-        
-    }];
-    
-    
+
+    [UIView  beginAnimations:nil context:NULL];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:0.75];
+        [self.navigationController pushViewController:gameVC animated:NO];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];        
+        [UIView commitAnimations];
 
     
 }
