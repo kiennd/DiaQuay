@@ -140,33 +140,38 @@
         }
         NSLog(@"res  %d, %d, %d",_c3.res,_c2.res,_c1.res);
         
-        long res=0;
+        long win=0,lose=0;
         int dem = 0;
         for (int i=0; i<8; i++) {
-            if (i==_c1.res) {
-                res+=2*_bet[i];
-                dem++;
-                NSLog(@"add %d",_bet[i]);
-            }else{
-                res-=_bet[i];
+            if (_bet[i]>0) {
+                BOOL check = false;
+                if (i==_c1.res) {
+                    win+=_bet[i];
+                    dem++;
+                    check = true;
+                    NSLog(@"+ = %d",_bet[i]);
+                }
+                if (i==_c2.res) {
+                    win+=_bet[i];
+                    dem++;
+                    check = true;
+                    NSLog(@"+ = %d",_bet[i]);
+                }
+                if (i==_c3.res) {
+                    win+=_bet[i];
+                    dem++;
+                    check = true;
+                    NSLog(@"+ = %d",_bet[i]);
+                }
+                if (check == false) {
+                    NSLog(@"- %d",_bet[i]);
+                    lose+= _bet[i];
+                }
+                
             }
-            if (i==_c2.res) {
-                dem++;
-                res+=(dem+2)*_bet[i];
-                NSLog(@"add %d",_bet[i]);
-            }else{
-                res-=_bet[i];
-            }
-            if (i==_c3.res) {
-                dem++;
-                res+=(dem+2)*_bet[i];
-                NSLog(@"add %d",_bet[i]);
-            }else{
-                res-=_bet[i];
-            }
-        
         }
-        
+        win*= dem;
+        long res =  win-lose;
         if (res<0) {
             _money += res;
             [_playerLose play];

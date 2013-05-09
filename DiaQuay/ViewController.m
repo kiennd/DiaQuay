@@ -133,8 +133,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
     else{
-        UIAlertView* al =  [[UIAlertView alloc] initWithTitle:@"Game is running" message:@"please wait" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [al show];
+        [self showMessageGameRuning];
     }
 
 }
@@ -142,29 +141,43 @@
     [_game napTien];
 }
 - (IBAction)subtractBet:(id)sender {
-    UIButton* bt = sender;
-    NSLog(@"- %d",bt.tag);
-    if (_betMoneyVal[bt.tag - 1]>0) {
-        _betMoneyVal[bt.tag - 1] -=10;
-        [self setbetMoneyText:_betMoneyVal[bt.tag - 1] idLabel:bt.tag - 1];
-        NSString* soundFilePath = [[NSBundle mainBundle] pathForResource:@"coin-change" ofType:@"mp3"];
-        NSURL* soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        _player2 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    if (_game.running ==false) {
+        UIButton* bt = sender;
+        NSLog(@"- %d",bt.tag);
+        if (_betMoneyVal[bt.tag - 1]>0) {
+            _betMoneyVal[bt.tag - 1] -=10;
+            [self setbetMoneyText:_betMoneyVal[bt.tag - 1] idLabel:bt.tag - 1];
+            NSString* soundFilePath = [[NSBundle mainBundle] pathForResource:@"coin-change" ofType:@"mp3"];
+            NSURL* soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+            _player2 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
         
-        [_player2 play];
+            [_player2 play];
+        }
+    }else{
+        [self showMessageGameRuning];
     }
 
 }
 - (IBAction)addBet:(id)sender {
-    UIButton* bt = sender;
-    NSLog(@"- %d",bt.tag);
-    if (_betMoneyVal[bt.tag%10 - 1]<990) {
-        _betMoneyVal[bt.tag%10 - 1] +=10;
-        [self setbetMoneyText:_betMoneyVal[bt.tag%10 - 1] idLabel:bt.tag%10 - 1];
-        NSString* soundFilePath = [[NSBundle mainBundle] pathForResource:@"coin-change" ofType:@"mp3"];
-        NSURL* soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        _player2 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
-        [_player2 play];
-    }}
+    if (_game.running ==false) {
+        UIButton* bt = sender;
+        NSLog(@"- %d",bt.tag);
+        if (_betMoneyVal[bt.tag%10 - 1]<990) {
+            _betMoneyVal[bt.tag%10 - 1] +=10;
+            [self setbetMoneyText:_betMoneyVal[bt.tag%10 - 1] idLabel:bt.tag%10 - 1];
+            NSString* soundFilePath = [[NSBundle mainBundle] pathForResource:@"coin-change" ofType:@"mp3"];
+            NSURL* soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+            _player2 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+            [_player2 play];
+        }
+    }else{
+        [self showMessageGameRuning];
+    }
+}
+
+- (void) showMessageGameRuning{
+    UIAlertView* al =  [[UIAlertView alloc] initWithTitle:@"Game is running" message:@"please wait" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [al show];
+}
 
 @end

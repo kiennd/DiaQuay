@@ -48,7 +48,6 @@ int _last;
 - (void) rotate:(float) degree
           image: (UIImageView*) uim
 {
-
     _last+=degree;
 
     if (_last >= 45) {
@@ -57,32 +56,10 @@ int _last;
         if ([_player isPlaying] == false) {
             [_player play];
         }
-        
     }
-    
 
     CGFloat radians = atan2f(uim.transform.b, uim.transform.a);
-    [UIView animateWithDuration:0.01 animations:^{
-        uim.transform = CGAffineTransformMakeRotation(radians+_dimensional* degree*M_PI/180.0);
-        
-    }completion:^(BOOL finished) {
-        if (_velocity1>=0.7) {
-            [self rotate:_velocity1 image:uim];
-        }else{
-                CGFloat radians = atan2f(uim.transform.b, uim.transform.a);
-            int degree = radians*180.0/M_PI;
-            
-            if (degree%45!=0) {
-                [self rotate:0.5 image:uim];
-                
-            }else{
-                NSLog(@"done %d",degree);
-                _res =degree;
-                [_player play];
-                return;
-            }
-        }
-    }];
+    uim.transform = CGAffineTransformMakeRotation(radians+_dimensional* degree*M_PI/180.0);
 }
 
 - (void) start
@@ -94,7 +71,7 @@ int _last;
     }else{
         _dimensional = 1;
     }
-    _tm = [NSTimer scheduledTimerWithTimeInterval:0.2
+    _tm = [NSTimer scheduledTimerWithTimeInterval:0.01
                                            target:self
                                          selector:@selector(changeVelocity)
                                          userInfo:nil
@@ -106,11 +83,23 @@ int _last;
 
 - (void) changeVelocity
 {
-    if (_velocity1>0) {
-        _velocity1-=_acceleration1;
+    
+    if (_velocity1>=0.7) {
+                _velocity1-=_acceleration1/10;
+        [self rotate:_velocity1 image:_circle1];
     }else{
-        [_tm invalidate];
+        CGFloat radians = atan2f(_circle1.transform.b, _circle1.transform.a);
+        int degree = radians*180.0/M_PI;
+        if (degree%45!=0) {
+            [self rotate:0.7 image:_circle1];
+        }else{
+            NSLog(@"done %d",degree);
+            _res =degree;
+            [_player play];
+            [_tm invalidate];
+        }
     }
+    
 }
 
 /*
